@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英文連接詞完全攻略 | 語資班學習專區</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Poppins:wght@600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2d5bff;
+            --primary-dark: #1a3acc;
+            --secondary: #ff6b35;
+            --accent: #ffd23f;
+            --success: #06d6a0;
+            --bg-light: #f8f9ff;
+            --bg-white: #ffffff;
+            --text-dark: #1a1a2e;
+            --text-gray: #64748b;
+            --shadow-sm: 0 2px 8px rgba(45, 91, 255, 0.08);
+            --shadow-md: 0 4px 20px rgba(45, 91, 255, 0.12);
+            --shadow-lg: 0 8px 32px rgba(45, 91, 255, 0.16);
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8ecff 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-decoration {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-decoration::before,
+        .bg-decoration::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .bg-decoration::before {
+            width: 600px;
+            height: 600px;
+            background: var(--primary);
+            top: -200px;
+            right: -200px;
+            animation-delay: 0s;
+        }
+
+        .bg-decoration::after {
+            width: 400px;
+            height: 400px;
+            background: var(--secondary);
+            bottom: -100px;
+            left: -100px;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 Q300,60 600,30 T1200,0 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.05)"/></svg>') bottom center/cover no-repeat;
+            opacity: 0.3;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            position: relative;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 500;
+            position: relative;
+            animation: slideDown 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            background: white;
+            padding: 1rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            animation: fadeIn 0.8s ease-out 0.4s both;
+        }
+
+        .nav-tab {
+            flex: 1;
+            min-width: 150px;
+            padding: 1rem 1.5rem;
+            background: var(--bg-light);
+            border: 3px solid transparent;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-tab:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(45, 91, 255, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .card-header {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-header::before {
+            content: '📚';
+            font-size: 2rem;
+        }
+
+        /* Tables */
+        .grammar-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1.5rem 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .grammar-table thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+        }
+
+        .grammar-table th {
+            padding: 1.2rem;
+            font-weight: 700;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .grammar-table td {
+            padding: 1.2rem;
+            border-bottom: 1px solid #e2e8f0;
+            background: white;
+        }
+
+        .grammar-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .grammar-table tbody tr:hover {
+            background: var(--bg-light);
+            transform: scale(1.01);
+        }
+
+        .grammar-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Examples */
+        .example-box {
+            background: linear-gradient(135deg, #fff5eb 0%, #ffe8d1 100%);
+            border-left: 5px solid var(--secondary);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .example-box strong {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        /* Key Points */
+        .key-point {
+            background: linear-gradient(135deg, #e8fff5 0%, #d1f5e8 100%);
+            border-left: 5px solid var(--success);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .key-point::before {
+            content: '💡 重點提示：';
+            font-weight: 700;
+            color: var(--success);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Quiz Section */
+        .quiz-container {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .quiz-question {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 2px solid var(--primary);
+        }
+
+        .quiz-question h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .quiz-option {
+            padding: 1rem 1.5rem;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--primary);
+            background: var(--bg-light);
+            transform: translateX(8px);
+        }
+
+        .quiz-option.selected {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .quiz-option.correct {
+            background: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+
+        .quiz-option.incorrect {
+            background: #ff4757;
+            color: white;
+            border-color: #ff4757;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--secondary) 0%, #ff4757 100%);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .quiz-result {
+            margin-top: 2rem;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            display: none;
+        }
+
+        .quiz-result.show {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* List Styling */
+        .content-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content-list li {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .content-list li:hover {
+            background: white;
+            box-shadow: var(--shadow-sm);
+            transform: translateX(8px);
+        }
+
+        /* Highlight Text */
+        .highlight {
+            background: linear-gradient(120deg, var(--accent) 0%, var(--accent) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 85%;
+            padding: 0 0.3rem;
+            font-weight: 700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .card-header {
+                font-size: 1.5rem;
+            }
+
+            .grammar-table {
+                font-size: 0.9rem;
+            }
+
+            .grammar-table th,
+            .grammar-table td {
+                padding: 0.8rem;
+            }
+        }
+
+        /* Special Conjunction Tags */
+        .conj-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin: 0.2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .conj-tag.and { background: #e3f2fd; color: #1976d2; }
+        .conj-tag.or { background: #fff3e0; color: #f57c00; }
+        .conj-tag.but { background: #fce4ec; color: #c2185b; }
+        .conj-tag.so { background: #f3e5f5; color: #7b1fa2; }
+        .conj-tag.subordinate { background: #e8f5e9; color: #388e3c; }
+
+        /* Progress Bar */
+        .progress-container {
+            background: #e2e8f0;
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success) 0%, var(--primary) 100%);
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-decoration"></div>
+
+    <header>
+        <h1>英文連接詞完全攻略</h1>
+        <p class="subtitle">語資班學習專區 | Conjunctions Master Guide</p>
+    </header>
+
+    <div class="container">
+        <!-- Navigation -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showSection('coordinate')">對等連接詞</button>
+            <button class="nav-tab" onclick="showSection('subordinate')">從屬連接詞</button>
+            <button class="nav-tab" onclick="showSection('practice')">互動練習</button>
+        </div>
+
+        <!-- Coordinate Conjunctions Section -->
+        <div id="coordinate" class="content-section active">
+            <div class="card">
+                <h2 class="card-header">對等連接詞概念</h2>
+                <div class="key-point">
+                    對等連接詞用來連接兩個<span class="highlight">完整句子</span>，若連接兩個完整句子，對等連接詞前方要加上<span class="highlight">逗號</span>。
+                </div>
+            </div>
+
+            <!-- AND -->
+            <div class="card">
+                <h2 class="card-header">
+                    <span class="conj-tag and">AND</span> 的用法
+                </h2>
+                
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th width="10%">編號</th>
+                            <th width="45%">用法</th>
+                            <th width="45%">中文</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>(1)</td>
+                            <td>A and B</td>
+                            <td>A 和 B</td>
+                        </tr>
+                        <tr>
+                            <td>(2)</td>
+                            <td>both A and B</td>
+                            <td>A 和 B（兩者都）</td>
+                        </tr>
+                        <tr>
+                            <td>(3)</td>
+                            <td>祈使句…, and ~</td>
+                            <td>祈使句…，那麼就 ~</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <strong>例句：</strong><br>
+                    I like tea <strong>and</strong> coffee. 我喜歡茶和咖啡。<br>
+                    Study hard, <strong>and</strong> you will pass the exam. 努力讀書，那麼你就會通過考試。
+                </div>
+            </div>
+
+            <!-- OR -->
+            <div class="card">
+                <h2 class="card-header">
+                    <span class="conj-tag or">OR</span> 的用法
+                </h2>
+                
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th width="10%">編號</th>
+                            <th width="45%">用法</th>
+                            <th width="45%">中文</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>(1)</td>
+                            <td>A or B</td>
+                            <td>A 或 B</td>
+                        </tr>
+                        <tr>
+                            <td>(2)</td>
+                            <td>either A or B</td>
+                            <td>A 或 B（兩者擇一）</td>
+                        </tr>
+                        <tr>
+                            <td>(3)</td>
+                            <td>祈使句…, or ~</td>
+                            <td>祈使句…，否則 ~</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <strong>例句：</strong><br>
+                    Would you like tea <strong>or</strong> coffee? 你想要茶或咖啡？<br>
+                    Hurry up, <strong>or</strong> you will be late. 快點，否則你會遲到。
+                </div>
+            </div>
+
+            <!-- BUT -->
+            <div class="card">
+                <h2 class="card-header">
+                    <span class="conj-tag but">BUT</span> 的用法
+                </h2>
+                
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th width="10%">編號</th>
+                            <th width="45%">用法</th>
+                            <th width="45%">中文</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>(1)</td>
+                            <td>S. + V…, but…</td>
+                            <td>S. + V…，但是…</td>
+                        </tr>
+                        <tr>
+                            <td>(2)</td>
+                            <td>not A but B</td>
+                            <td>不是 A 而是 B</td>
+                        </tr>
+                        <tr>
+                            <td>(3)</td>
+                            <td>not only A but (also) B</td>
+                            <td>不但 A 而且 B</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <strong>例句：</strong><br>
+                    I wanted to go, <strong>but</strong> I was too tired. 我想去，但是我太累了。<br>
+                    He is <strong>not</strong> lazy <strong>but</strong> smart. 他不是懶惰而是聰明。
+                </div>
+            </div>
+
+            <!-- SO -->
+            <div class="card">
+                <h2 class="card-header">
+                    <span class="conj-tag so">SO</span> 的用法
+                </h2>
+                
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th width="10%">編號</th>
+                            <th width="45%">用法</th>
+                            <th width="45%">中文</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>(1)</td>
+                            <td>S. + V…, so…</td>
+                            <td>S. + V…，所以…</td>
+                        </tr>
+                        <tr>
+                            <td>(2)</td>
+                            <td>so + be/V助 + S. / so + 助 V + S.</td>
+                            <td>S. 也是如此 ~</td>
+                        </tr>
+                        <tr>
+                            <td>(3)</td>
+                            <td>so + adj. / adv.</td>
+                            <td>如此… ~</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <strong>例句：</strong><br>
+                    It was raining, <strong>so</strong> I stayed home. 在下雨，所以我待在家。<br>
+                    She is happy, and <strong>so</strong> am I. 她很開心，我也是。
+                </div>
+            </div>
+
+            <!-- NEITHER -->
+            <div class="card">
+                <h2 class="card-header">NEITHER 的用法</h2>
+                
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th width="10%">編號</th>
+                            <th width="45%">用法</th>
+                            <th width="45%">中文</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>(1)</td>
+                            <td>neither A nor B</td>
+                            <td>既不是 A 也不是 B</td>
+                        </tr>
+                        <tr>
+                            <td>(2)</td>
+                            <td>neither + be/V助 + S. / neither + 助 V + S.</td>
+                            <td>S. 也不 ~</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <strong>例句：</strong><br>
+                    <strong>Neither</strong> Tom <strong>nor</strong> Mary is coming. Tom和Mary都不會來。<br>
+                    I don't like coffee, and <strong>neither</strong> does she. 我不喜歡咖啡，她也不喜歡。
+                </div>
+            </div>
+        </div>
+
+        <!-- Subordinate Conjunctions Section -->
+        <div id="subordinate" class="content-section">
+            <div class="card">
+                <h2 class="card-header">從屬連接詞概念</h2>
+                <div class="key-point">
+                    從屬連接詞也可以連接兩個完整的句子，但與對等連接詞不同的地方在於，「從屬連接詞」引導的句子為<span class="highlight">主要子句</span>或<span class="highlight">副詞子句</span>，用以修飾主要句子，且從屬子句（副詞子句）<span class="highlight">不可以單獨存在</span>，必須依附在主要子句之下。
+                </div>
+
+                <div class="key-point">
+                    <strong>⚠️ 注意！兩子句並不對等！</strong><br><br>
+                    <strong>【考點】</strong> 一般來說，從屬連接詞必須連接兩個<span class="highlight">性質相同</span>的子句。但當連接<span class="highlight">主要子句與從屬子句</span>時，從屬子句必須用<span class="highlight">完整句構</span>。
+                </div>
+
+                <div class="example-box">
+                    <strong>📌 關鍵觀念：兩個未來動作的時態用法</strong><br><br>
+                    _____ Sherry was single last year, we <strong>could</strong> spend our Christmas together.<br>
+                    _____ Raphael <strong>comes</strong> tomorrow, he <strong>will be</strong> of great help to us.<br><br>
+                    
+                    <strong>💡 規則：</strong>兩個未來動作，一前一後發生：<br>
+                    • 先發生者用 <span class="highlight">現在式</span><br>
+                    • 後發生者用 <span class="highlight">未來式</span>
+                </div>
+
+                <div class="key-point">
+                    <strong>從屬連接詞的句型特點：</strong><br>
+                    • 連接詞用來連接兩個完整的句子<br>
+                    • 對等連接詞：連接兩個<span class="highlight">對等</span>的句子<br>
+                    • 從屬連接詞：引導的句子為<span class="highlight">主要子句</span>或<span class="highlight">副詞子句</span>，用以修飾主要句子<br>
+                    • 從屬子句（副詞子句）<span class="highlight">不可以單獨存在</span>，必須依附在主要子句之下
+                </div>
+
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>對等連接詞</th>
+                            <th>從屬連接詞</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                連接兩個<strong>對等</strong>的句子<br>
+                                <small>例：and（和；而且）、or（或者）、but（但是）</small>
+                            </td>
+                            <td>
+                                連接<strong>主要子句</strong>與<strong>從屬子句</strong><br>
+                                <small>例：before（在…之前）、when（當…）、if（如果）、although（雖然）</small>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Subordinate Conjunctions Table -->
+            <div class="card">
+                <h2 class="card-header">
+                    <span class="conj-tag subordinate">從屬連接詞</span> 句型總整理
+                </h2>
+                
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th width="10%">編號</th>
+                            <th width="20%">連接詞</th>
+                            <th width="35%">用法</th>
+                            <th width="35%">中文</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>(1)</td>
+                            <td><strong>when</strong></td>
+                            <td>+ 前句 _____ 的動作</td>
+                            <td>當…</td>
+                        </tr>
+                        <tr>
+                            <td>(2)</td>
+                            <td><strong>before</strong></td>
+                            <td>+ _____</td>
+                            <td>在…之前</td>
+                        </tr>
+                        <tr>
+                            <td>(3)</td>
+                            <td><strong>after</strong></td>
+                            <td>+ _____</td>
+                            <td>在…之後</td>
+                        </tr>
+                        <tr>
+                            <td>(4)</td>
+                            <td><strong>if</strong></td>
+                            <td>+ _____</td>
+                            <td>如果；是否</td>
+                        </tr>
+                        <tr>
+                            <td>(5)</td>
+                            <td><strong>whether</strong></td>
+                            <td>+ _____ 的句子</td>
+                            <td>無論是否</td>
+                        </tr>
+                        <tr>
+                            <td>(6)</td>
+                            <td><strong>as soon as</strong></td>
+                            <td>+ 前句 _____ 的動作</td>
+                            <td>一…就…</td>
+                        </tr>
+                        <tr>
+                            <td>(7)</td>
+                            <td><strong>as long as</strong></td>
+                            <td>+ _____</td>
+                            <td>只要</td>
+                        </tr>
+                        <tr>
+                            <td>(8)</td>
+                            <td><strong>because</strong></td>
+                            <td>+ 前句的 _____</td>
+                            <td>因為</td>
+                        </tr>
+                        <tr>
+                            <td>(9)</td>
+                            <td><strong>(al)though</strong></td>
+                            <td>+ 前後 _____ 的句子</td>
+                            <td>雖然</td>
+                        </tr>
+                        <tr>
+                            <td>(10)</td>
+                            <td><strong>so that</strong></td>
+                            <td>+ 前方動作的 _____</td>
+                            <td>以便於</td>
+                        </tr>
+                        <tr>
+                            <td>(11)</td>
+                            <td><strong>so…that…</strong></td>
+                            <td>+ 前方狀態的 _____</td>
+                            <td>如此…以致於</td>
+                        </tr>
+                        <tr>
+                            <td>(12)</td>
+                            <td><strong>until</strong></td>
+                            <td>+ _____</td>
+                            <td>直到…為止</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Time Conjunctions -->
+            <div class="card">
+                <h2 class="card-header">時間連接詞詳解</h2>
+                
+                <!-- When Usage -->
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0; font-size: 1.4rem;">📌 When 的用法</h3>
+                
+                <div class="key-point">
+                    when 引導兩句用來表示「<span class="highlight">兩個條件</span>」的子句，也適用「<span class="highlight">現在簡單式</span>」代替「<span class="highlight">未來式</span>」的規則。
+                </div>
+
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th width="50%">過去簡單式</th>
+                            <th width="50%">過去進行式</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Kevin dropped the cup <strong>when</strong> the phone rang.<br>
+                                <small style="color: var(--text-gray);">→ 當電話響時，Kevin 掉了杯子（兩個瞬間動作發生）</small>
+                            </td>
+                            <td>
+                                Kevin was sleeping <strong>when</strong> the phone rang.<br>
+                                <small style="color: var(--text-gray);">→ 當電話響時，Kevin 正在睡覺（一個動作進行中，另一個突然發生）</small>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- While vs When -->
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0; font-size: 1.4rem;">📌 While 與 When 的差異</h3>
+                
+                <div class="key-point">
+                    <strong>while</strong> 與 <strong>when</strong> 當連接詞時，兩者含意相同，表「當……時」。<br>
+                    🔸 一定要相反，<strong>while</strong> 比較強調「在那段時間」，<strong>when</strong> 則多用於強調「在那個時間點」。
+                </div>
+
+                <div class="example-box">
+                    <strong>比較：</strong><br>
+                    (1) <strong>While</strong> I was walking home, it began to rain.<br>
+                    → 當我走路回家時，開始下雨了（強調期間的重疊或知悉期間）<br><br>
+                    
+                    (2) <strong>When</strong> it began to rain, I was standing under a bridge.<br>
+                    → 開始下雨時，我正站在橋下（強調期間的界線點或知悉期間點）
+                </div>
+
+                <!-- Before & After -->
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0; font-size: 1.4rem;">📌 Before / After 的用法</h3>
+                
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>說明</th>
+                            <th>句型</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. before（在……之前）/ after（在……之後）用來連接兩句時，兩句皆同一時態</td>
+                            <td><span class="highlight">主要子句 + before / after 引導的從屬子句</span></td>
+                        </tr>
+                        <tr>
+                            <td>2. before / after 放句首時，其引導的子句後要加逗號；放句中時，則不需逗號</td>
+                            <td>Before / After 引導的從屬子句，主要子句</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="example-box">
+                    <strong>例句：</strong><br>
+                    (1) He went to bed <strong>after</strong> he brushed his teeth.<br>
+                    → He brushed his teeth <strong>before</strong> he went to bed.<br>
+                    （在他刷牙之後，他就去睡了）<br><br>
+                    
+                    (2) <strong>Before</strong> he made up his mind, he had a long talk with his dad.<br>
+                    → <strong>After</strong> he had a long talk with his dad, he made up his mind.<br>
+                    （在他下定決心之前，他和他爸爸長談了一番）
+                </div>
+
+                <!-- Until & Since -->
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0; font-size: 1.4rem;">📌 Until / Since 的用法</h3>
+                
+                <div class="key-point">
+                    <strong>1. until（直到……為止）</strong><br>
+                    (1) 可當介系詞或連接詞。當介系詞時，後接待有時間意義的名詞；當連接詞時，用來連接兩個子句。<br>(2)「not... until...」表「直到……才……」。<br><br>
+                    
+                    <strong>2. since（自……以來）</strong><br>
+                    (1) 可當介系詞或連接詞。當介系詞時，常用於現在完成式，後接一個過去時間點，表動作的起始點；當連接詞時，後面引導一個過去式子句，表「自從某件事情之後」。
+                </div>
+
+                <div class="example-box">
+                    <strong>Until 例句：</strong><br>
+                    ① I told my son he could play video games <strong>until</strong> 8 p.m. 當介系詞<br>
+                    → 我告訴我兒子他可以玩電玩遊戲直到晚上八點。<br><br>
+                    
+                    ② Let's not go home <strong>until</strong> we win the race. 當連接詞<br>
+                    → 我們到贏得賽車我們再回家吧。<br><br>
+                    
+                    <strong>Since 例句：</strong><br>
+                    ① I've lived in Taipei <strong>since</strong> 2016. 當介系詞<br>
+                    → 我自 2016 年以來就住在台北。<br><br>
+                    
+                    ② Hans hasn't talked to his girlfriend <strong>since</strong> they had a fight last week. 當連接詞<br>
+                    → Hans 自上星期和他的女朋友吵架後就沒和她說話。
+                </div>
+
+                <!-- As soon as & As long as -->
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0; font-size: 1.4rem;">📌 As soon as / As long as 的用法</h3>
+                
+                <div class="key-point">
+                    <strong>1. as soon as 表「一……就……」：</strong><br>
+                    (1) 使用時機：用來連接幾乎同時發生的兩個子句<br>
+                    (2) 主要子句是「未來式」時，從屬子句的動詞會用「現在簡單式」代替「未來式」<br><br>
+                    
+                    <strong>2. as long as 表「只要」：</strong><br>
+                    (1) 使用時機：用以表示條件，形成條件句<br>
+                    (2) 主要子句是「未來式」時，從屬子句的動詞會用「現在簡單式」代替「未來式」
+                </div>
+
+                <div class="example-box">
+                    <strong>As soon as 例句：</strong><br>
+                    ① <strong>As soon as</strong> Eric got home, it started to rain.<br>
+                    → Eric 一到家就開始下雨了。<br><br>
+                    
+                    ② <strong>As soon as</strong> I arrive there, I will give you a call.<br>
+                    → 我一到達那裡就會打電話給你。<br><br>
+                    
+                    <strong>As long as 例句：</strong><br>
+                    ① <strong>As long as</strong> you finish your homework, you can play video games.<br>
+                    → 只要你完成作業，你就能玩電動遊戲。<br><br>
+                    
+                    ② I will do anything <strong>as long as</strong> you love me.<br>
+                    → 我願意做任何事，只要你愛我。
+                </div>
+            </div>
+
+            <!-- Conditional & Reason Conjunctions -->
+            <div class="card">
+                <h2 class="card-header">條件與原因連接詞</h2>
+                
+                <!-- If Usage -->
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0; font-size: 1.4rem;">📌 If（如果）的用法</h3>
+                
+                <div class="key-point">
+                    (1) if 引導的子句可用來表示未來事件登生的「條件」，故稱「條件子句」。<br>
+                    (2) if 放句首時，其引導的子句後要加逗號；放句中時，則不需逗號。<br>
+                    (3) 主要子句是「未來式」時，從屬子句的動詞會用「現在簡單式」代替「未來式」。<br>
+                    (4) 主要子句常用助動詞 will / can / may / must 或祈使句表示條件成立後的「結果」。<br>
+                </div>
+
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>句型</th>
+                            <th>說明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>主要子句（未來式）+ if + 條件子句（現在簡單式）.<br>
+                            = If + 條件子句（現在簡單式）, 主要子句（未來式）.</td>
+                            <td>If Anna comes tomorrow, I will give her the gift.<br>
+                            → I will give Anna the gift if she comes tomorrow.<br>
+                            （如果 Anna 明天來，我會給她禮物）</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Because Usage -->
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0; font-size: 1.4rem;">📌 Because（因為）的用法</h3>
+                
+                <div class="key-point">
+                    <strong>1. because（因為）&amp; because of（因為）</strong><br>
+                    (1) <strong>because</strong> 用來連接兩句有「因果關係」的子句，<strong>because</strong> 後接表原因的子句。<br>
+                    (2) <strong>because</strong> 放句首時，其引導的子句後要加逗號；放句中時，則不需逗號。<br>
+                    (3) <strong>so 也是連接「因果關係」子句的連接詞，because 和 so 的句子可互換，但兩者只能擇一出現。<br>
+                </div>
+
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>句型</th>
+                            <th>說明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>結果子句 + because + 原因子句.<br>= Because + 原因子句, 結果子句.</td>
+                            <td>I was hungry <strong>because</strong> I didn't have lunch.<br>
+                            = I didn't have lunch, <strong>so</strong> I was hungry.<br>
+                            （我很餓，因為我沒有吃午餐）</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="key-point">
+                    <strong>⚠️ 考試重點：</strong><br>
+                    中文裡常用「……因為……，所以……」來說明事情，但英文中不能用「<span class="highlight">although... but...</span>」、「<span class="highlight">because... so...</span>」表示，因為對等連接詞和從屬連接詞不能同時出現，必須擇一使用。
+                </div>
+
+                <div class="example-box">
+                    <strong>正確：</strong><br>
+                    【○】<strong>Although</strong> the old man is rich, he is unhappy. 用從屬連接詞連接兩個子句<br><br>
+                    【○】The old man is rich, <strong>but</strong> he is unhappy. → 用對等連接詞連接兩個子句<br>
+                    （雖然那個老人很有錢，但是他不快樂）<br><br>
+                    
+                    <strong>錯誤：</strong><br>
+                    【✗】<strong>Because</strong> it is too hot, <strong>so</strong> we don't want to go out. 用從屬連接詞連接兩句時也不能使用對等連接詞<br>
+                    【○】<strong>Because</strong> it is too hot, we don't want to go out. → 用從屬連接詞連接兩句<br>
+                    【○】It is too hot, <strong>so</strong> we don't want to go out. → 用對等連接詞連接兩個子句<br>
+                    （因為天氣太熱，所以我們不想外出）
+                </div>
+
+                <div class="example-box">
+                    <strong>because vs because of：</strong><br>
+                    <strong>because</strong> 後接子句：<strong>because of</strong> 後接名詞<br><br>
+                    
+                    ✓ Vivian took a taxi to work today <strong>because</strong> it rained heavily.<br>
+                    → Vivian took a taxi to work today <strong>because of</strong> heavy rain.<br>
+                    （Vivian 今天搭計程車上班，因為下大雨了。）
+                </div>
+            </div>
+
+            <!-- Contrast & Purpose Conjunctions -->
+            <div class="card">
+                <h2 class="card-header">對比與目的連接詞</h2>
+                
+                <!-- Although Usage -->
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0; font-size: 1.4rem;">📌 Although（雖然）的用法</h3>
+                
+                <div class="key-point">
+                    <strong>1. although（雖然）的用法：</strong><br>
+                    (1) 連接兩 although 引導的子句，用來表達兩主要子句「對比或意料之外的想法」。<br>
+                    (2) <strong>Although</strong> 放句首時，其引導的子句後要加逗號；放句中時，則不需逗號。
+                </div>
+
+                <div class="example-box">
+                    <strong>例句：</strong><br>               
+                    ✓ Mandy goes jogging in the park every day<strong>(,) although</strong> she is very busy.<br>
+                    = <strong>Although</strong> Mandy is very busy, she goes jogging in the park every day.<br>
+                    （雖然 Mandy 很忙，但她每天都會去公園慢跑。）
+                </div>
+
+                <table class="grammar-table">
+                    <thead>
+                        <tr>
+                            <th>說明</th>
+                            <th>例句</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. though 當連接詞時，可與 although 互換，通常 although 使用上比 though 正式</td>
+                        <tr>
+                            <td>2. though 也可當副詞，意同 however（然而；不過），通常置於句尾，於口語中常見； although 則只能當連接詞</td>
+                            <td>I'm full. I can have some fruit, <strong>though</strong>.<br>（我飽了，不過我可以吃些水果。）</td>
+                        </tr>  
+                    </tbody>
+                </table>
+
+                <!-- So that Usage -->
+                <h3 style="color: var(--primary); margin: 1.5rem 0 1rem 0; font-size: 1.4rem;">📌 So that / So...that... 的用法</h3>
+                
+                <ul class="content-list">
+                    <li><strong>so that</strong> 以便於 / <strong>in order that</strong> 為了</li>
+                    <li><strong>so…that…</strong> 如此…以致於</li>
+                </ul>
+
+                <div class="example-box">
+                    <strong>例句：</strong><br>
+                    She studied hard <strong>so that</strong> she could pass the exam. 她努力讀書以便能通過考試。<br>
+                    It was <strong>so</strong> cold <strong>that</strong> I stayed inside. 天氣如此冷以致於我待在室內。
+                </div>
+            </div>
+        </div>
+
+        <!-- Practice Section -->
+        <div id="practice" class="content-section">
+            <div class="quiz-container">
+                <h2>📝 文法測驗：請選擇正確的連接詞</h2>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                </div>
+
+                <!-- Question 1 -->
+                <div class="quiz-question">
+                    <h3>題目 1</h3>
+                    <p>I wanted to go to the party, _____ I was too tired.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="1" data-answer="but">A. and</div>
+                        <div class="quiz-option" data-question="1" data-answer="but">B. but</div>
+                        <div class="quiz-option" data-question="1" data-answer="but">C. so</div>
+                        <div class="quiz-option" data-question="1" data-answer="but">D. or</div>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="quiz-question">
+                    <h3>題目 2</h3>
+                    <p>_____ it was raining, we decided to stay home.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="2" data-answer="because">A. And</div>
+                        <div class="quiz-option" data-question="2" data-answer="because">B. Because</div>
+                        <div class="quiz-option" data-question="2" data-answer="because">C. Or</div>
+                        <div class="quiz-option" data-question="2" data-answer="because">D. But</div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question">
+                    <h3>題目 3</h3>
+                    <p>Study hard, _____ you will pass the exam.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="3" data-answer="and">A. and</div>
+                        <div class="quiz-option" data-question="3" data-answer="and">B. but</div>
+                        <div class="quiz-option" data-question="3" data-answer="and">C. or</div>
+                        <div class="quiz-option" data-question="3" data-answer="and">D. so</div>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question">
+                    <h3>題目 4</h3>
+                    <p>_____ I finish my homework, I will go to bed.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="4" data-answer="after">A. Before</div>
+                        <div class="quiz-option" data-question="4" data-answer="after">B. After</div>
+                        <div class="quiz-option" data-question="4" data-answer="after">C. Until</div>
+                        <div class="quiz-option" data-question="4" data-answer="after">D. Unless</div>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="quiz-question">
+                    <h3>題目 5</h3>
+                    <p>_____ he was tired, he continued working.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="5" data-answer="although">A. Because</div>
+                        <div class="quiz-option" data-question="5" data-answer="although">B. Although</div>
+                        <div class="quiz-option" data-question="5" data-answer="although">C. So</div>
+                        <div class="quiz-option" data-question="5" data-answer="although">D. If</div>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="quiz-question">
+                    <h3>題目 6</h3>
+                    <p>She speaks _____ Chinese _____ English.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="6" data-answer="both-and">A. both ... and</div>
+                        <div class="quiz-option" data-question="6" data-answer="both-and">B. either ... or</div>
+                        <div class="quiz-option" data-question="6" data-answer="both-and">C. neither ... nor</div>
+                        <div class="quiz-option" data-question="6" data-answer="both-and">D. not ... but</div>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="quiz-question">
+                    <h3>題目 7</h3>
+                    <p>Hurry up, _____ you'll miss the bus!</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="7" data-answer="or">A. and</div>
+                        <div class="quiz-option" data-question="7" data-answer="or">B. but</div>
+                        <div class="quiz-option" data-question="7" data-answer="or">C. or</div>
+                        <div class="quiz-option" data-question="7" data-answer="or">D. so</div>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="quiz-question">
+                    <h3>題目 8</h3>
+                    <p>I will call you _____ I arrive at the station.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="8" data-answer="when">A. when</div>
+                        <div class="quiz-option" data-question="8" data-answer="when">B. because</div>
+                        <div class="quiz-option" data-question="8" data-answer="when">C. although</div>
+                        <div class="quiz-option" data-question="8" data-answer="when">D. unless</div>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="quiz-question">
+                    <h3>題目 9</h3>
+                    <p>I had a fever, _____ I didn't go to the party last night.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="9" data-answer="so">A. because of</div>
+                        <div class="quiz-option" data-question="9" data-answer="so">B. because</div>
+                        <div class="quiz-option" data-question="9" data-answer="so">C. so</div>
+                        <div class="quiz-option" data-question="9" data-answer="so">D. but</div>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="quiz-question">
+                    <h3>題目 10</h3>
+                    <p>_____ James didn't prepare for the math test, he still got a 30.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="10" data-answer="although">A. Because; so</div>
+                        <div class="quiz-option" data-question="10" data-answer="although">B. Because; ✗</div>
+                        <div class="quiz-option" data-question="10" data-answer="although">C. ✗; because</div>
+                        <div class="quiz-option" data-question="10" data-answer="although">D. So; ✗</div>
+                    </div>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="quiz-question">
+                    <h3>題目 11</h3>
+                    <p>If my mom calls, tell her I'm in a meeting.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="11" data-answer="calls">A. calls（現在簡單式）</div>
+                        <div class="quiz-option" data-question="11" data-answer="calls">B. will call（未來式）</div>
+                        <div class="quiz-option" data-question="11" data-answer="calls">C. called（過去式）</div>
+                        <div class="quiz-option" data-question="11" data-answer="calls">D. is calling（現在進行式）</div>
+                    </div>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="quiz-question">
+                    <h3>題目 12</h3>
+                    <p>Please tell Mr. White I'm on the fifth floor _____ he calls.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="12" data-answer="when">A. if</div>
+                        <div class="quiz-option" data-question="12" data-answer="when">B. so</div>
+                        <div class="quiz-option" data-question="12" data-answer="when">C. because</div>
+                        <div class="quiz-option" data-question="12" data-answer="when">D. although</div>
+                    </div>
+                </div>
+
+                <!-- Question 13 -->
+                <div class="quiz-question">
+                    <h3>題目 13</h3>
+                    <p>_____ I see that girl in the library every day, I don't know her name.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="13" data-answer="although">A. Because</div>
+                        <div class="quiz-option" data-question="13" data-answer="although">B. Although</div>
+                        <div class="quiz-option" data-question="13" data-answer="although">C. When</div>
+                        <div class="quiz-option" data-question="13" data-answer="although">D. Whether</div>
+                    </div>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="quiz-question">
+                    <h3>題目 14</h3>
+                    <p>Anna loves Hans very much _____ he is not a good guy.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="14" data-answer="although">A. so</div>
+                        <div class="quiz-option" data-question="14" data-answer="although">B. after</div>
+                        <div class="quiz-option" data-question="14" data-answer="although">C. although</div>
+                        <div class="quiz-option" data-question="14" data-answer="although">D. or</div>
+                    </div>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="quiz-question">
+                    <h3>題目 15</h3>
+                    <p>He went to bed _____ he brushed his teeth.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="15" data-answer="after">A. before</div>
+                        <div class="quiz-option" data-question="15" data-answer="after">B. after</div>
+                        <div class="quiz-option" data-question="15" data-answer="after">C. until</div>
+                        <div class="quiz-option" data-question="15" data-answer="after">D. when</div>
+                    </div>
+                </div>
+
+                <!-- Question 16 -->
+                <div class="quiz-question">
+                    <h3>題目 16</h3>
+                    <p>I was _____ in the living room when the phone rang (鈴響).</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="16" data-answer="dancing">A. dance</div>
+                        <div class="quiz-option" data-question="16" data-answer="dancing">B. dances</div>
+                        <div class="quiz-option" data-question="16" data-answer="dancing">C. to dance</div>
+                        <div class="quiz-option" data-question="16" data-answer="dancing">D. was dancing</div>
+                    </div>
+                </div>
+
+                <!-- Question 17 -->
+                <div class="quiz-question">
+                    <h3>題目 17</h3>
+                    <p>Timmy works hard. He works _____ 12 a.m. every day.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="17" data-answer="until">A. since</div>
+                        <div class="quiz-option" data-question="17" data-answer="until">B. although</div>
+                        <div class="quiz-option" data-question="17" data-answer="until">C. because of</div>
+                        <div class="quiz-option" data-question="17" data-answer="until">D. until</div>
+                    </div>
+                </div>
+
+                <!-- Question 18 -->
+                <div class="quiz-question">
+                    <h3>題目 18</h3>
+                    <p>Your hands are dirty! Wash your hands _____ you eat.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="18" data-answer="before">A. before</div>
+                        <div class="quiz-option" data-question="18" data-answer="before">B. because</div>
+                        <div class="quiz-option" data-question="18" data-answer="before">C. or</div>
+                        <div class="quiz-option" data-question="18" data-answer="before">D. when</div>
+                    </div>
+                </div>
+
+                <!-- Question 19 -->
+                <div class="quiz-question">
+                    <h3>題目 19</h3>
+                    <p>We'll be ready _____ the typhoon comes.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="19" data-answer="when">A. while</div>
+                        <div class="quiz-option" data-question="19" data-answer="when">B. when</div>
+                        <div class="quiz-option" data-question="19" data-answer="when">C. after</div>
+                        <div class="quiz-option" data-question="19" data-answer="when">D. until</div>
+                    </div>
+                </div>
+
+                <!-- Question 20 -->
+                <div class="quiz-question">
+                    <h3>題目 20</h3>
+                    <p>_____ you arrive at the airport, give me a call.</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-question="20" data-answer="when">A. Before</div>
+                        <div class="quiz-option" data-question="20" data-answer="when">B. Until</div>
+                        <div class="quiz-option" data-question="20" data-answer="when">C. When</div>
+                        <div class="quiz-option" data-question="20" data-answer="when">D. After</div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" onclick="checkAnswers()">提交答案</button>
+
+                <div class="quiz-result" id="quizResult"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Section Navigation
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Quiz functionality
+        const correctAnswers = {
+            1: 'but',
+            2: 'because',
+            3: 'and',
+            4: 'after',
+            5: 'although',
+            6: 'both-and',
+            7: 'or',
+            8: 'when',
+            9: 'so',
+            10: 'although',
+            11: 'calls',
+            12: 'when',
+            13: 'although',
+            14: 'although',
+            15: 'after',
+            16: 'dancing',
+            17: 'until',
+            18: 'before',
+            19: 'when',
+            20: 'when'
+        };
+
+        const userAnswers = {};
+
+        // Handle option selection
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const question = this.dataset.question;
+                const selectedText = this.textContent.trim();
+                
+                // Remove selected class from all options in this question
+                document.querySelectorAll(`[data-question="${question}"]`).forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Store answer (extract the conjunction from the option text)
+                const answerMatch = selectedText.match(/[A-D]\.\s*(.+)/);
+                if (answerMatch) {
+                    userAnswers[question] = answerMatch[1].toLowerCase().replace(/\s+/g, '-');
+                }
+            });
+        });
+
+        // Check answers
+        function checkAnswers() {
+            let score = 0;
+            const totalQuestions = Object.keys(correctAnswers).length;
+
+            // Check each answer
+            for (let q = 1; q <= totalQuestions; q++) {
+                const options = document.querySelectorAll(`[data-question="${q}"]`);
+                const userAnswer = userAnswers[q];
+                const correctAnswer = correctAnswers[q];
+
+                options.forEach(option => {
+                    const optionText = option.textContent.trim();
+                    const optionValue = optionText.match(/[A-D]\.\s*(.+)/);
+                    
+                    if (optionValue) {
+                        const value = optionValue[1].toLowerCase().replace(/\s+/g, '-');
+                        
+                        // Remove previous classes
+                        option.classList.remove('correct', 'incorrect');
+                        
+                        // Mark correct answer
+                        if (value === correctAnswer) {
+                            option.classList.add('correct');
+                            if (userAnswer === correctAnswer) {
+                                score++;
+                            }
+                        } else if (option.classList.contains('selected')) {
+                            option.classList.add('incorrect');
+                        }
+                    }
+                });
+            }
+
+            // Update progress bar
+            const percentage = (score / totalQuestions) * 100;
+            document.getElementById('progressBar').style.width = percentage + '%';
+
+            // Show result
+            const resultDiv = document.getElementById('quizResult');
+            resultDiv.classList.add('show');
+            
+            let message = '';
+            let bgColor = '';
+            
+            if (score === totalQuestions) {
+                message = `🎉 完美！你答對了所有 ${totalQuestions} 題！`;
+                bgColor = 'linear-gradient(135deg, #06d6a0 0%, #1b9aaa 100%)';
+            } else if (score >= totalQuestions * 0.7) {
+                message = `👏 很棒！你答對了 ${score}/${totalQuestions} 題！`;
+                bgColor = 'linear-gradient(135deg, #ffd23f 0%, #ff6b35 100%)';
+            } else {
+                message = `💪 加油！你答對了 ${score}/${totalQuestions} 題，繼續努力！`;
+                bgColor = 'linear-gradient(135deg, #ff6b35 0%, #ff4757 100%)';
+            }
+            
+            resultDiv.textContent = message;
+            resultDiv.style.background = bgColor;
+            resultDiv.style.color = 'white';
+
+            // Scroll to result
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
